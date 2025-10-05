@@ -1,0 +1,70 @@
+{
+  "lang_code": "en",
+  "direction": "ltr",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "projects": "Projects",
+    "contact": "Contact Us",
+    "management_team": "Management Team",
+    "core_values": "Our Core Values"
+  },
+  "hero": {
+    "title": "Building with a Future Vision",
+    "description": "We contribute to achieving Vision 2030 through innovative construction projects and integrated services that meet the highest standards of quality and safety.",
+    "btn_projects": "Our Projects",
+    "btn_contact": "Contact Us"
+  },
+  "footer": {
+    "quick_links": "Quick Links",
+    "contact_us": "Contact Us",
+    "copyright": "© 2024 Buildrax Company. All rights reserved.",
+    "company_description": "Buildrax Co. Ltd. - Building with a Future Vision"
+  },
+  "contact_page": {
+    "title": "Contact Us",
+    "subtitle": "We are here to answer all your inquiries.",
+    "form_name": "Full Name",
+    "form_email": "Email Address",
+    "form_subject": "Subject",
+    "form_message": "Your Message",
+    "form_send": "Send Message",
+    "map_title": "Our Location on the Map",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address"
+  },
+  "about_page": {
+    "title": "About Buildrax",
+    "subtitle": "Pioneers in the contracting and construction field for over 15 years.",
+    "who_we_are": "Who We Are",
+    "mission": "Our Mission",
+    "vision": "Our Vision"
+  },
+  "management_page": {
+    "title": "Management Team",
+    "subtitle": "Professional leadership guiding the company towards excellence and innovation.",
+    "chairman_name": "Eng. Wael Al-Akhdar",
+    "chairman_title": "Chairman of the Board",
+    "ceo_name": "Eng. Wajdi Al-Ful",
+    "ceo_title": "Vice Chairman - CEO"
+  },
+  "values_page": {
+    "title": "Our Core Values",
+    "subtitle": "The foundations of our success and excellence in every project.",
+    "quality": "Quality",
+    "commitment": "Commitment",
+    "safety": "Safety",
+    "innovation": "Innovation",
+    "transparency": "Transparency"
+  },
+  "services_overview_page": {
+    "title": "Services Overview",
+    "subtitle": "We offer a comprehensive package of construction and engineering services."
+  },
+  "projects_page": {
+    "title": "Projects Gallery",
+    "subtitle": "Our achievements speak to the quality of our work and the excellence of our services."
+  }
+}
