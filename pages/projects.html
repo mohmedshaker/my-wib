@@ -6,111 +6,91 @@
     <title>المشاريع - بيدراكس</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/components.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body style="background-color: #f4f7f6;">
+
     <!-- الهيدر -->
     <header class="header">
         <nav class="nav container">
             <div class="logo">
-                <img src="../images/logo.png" alt="شعار بيدراكس" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-main">بيدراكس</span>
-                    <span class="logo-sub">BUILDRAX</span>
-                </div>
+                <a href="../index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="../images/logo.png" alt="شعار بيدراكس" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-main">بيدراكس</span>
+                        <span class="logo-sub">BUILDRAX</span>
+                    </div>
+                </a>
             </div>
             <ul class="nav-links">
-                <li><a href="../index.html" class="nav-link" data-translate="nav.home">الرئيسية</a></li>
-                <li><a href="about.html" class="nav-link" data-translate="nav.about">عن الشركة</a></li>
-                <li><a href="services.html" class="nav-link" data-translate="nav.services">الخدمات</a></li>
-                <li><a href="projects.html" class="nav-link active" data-translate="nav.projects">المشاريع</a></li>
-                <li><a href="contact.html" class="nav-link" data-translate="nav.contact">تواصل معنا</a></li>
+                <li><a href="../index.html" class="nav-link" data-translate="nav.home"></a></li>
+                <li><a href="about.html" class="nav-link" data-translate="nav.about"></a></li>
+                <li><a href="services-overview.html" class="nav-link" data-translate="nav.services"></a></li>
+                <li><a href="projects.html" class="nav-link active" data-translate="nav.projects"></a></li>
+                <li><a href="contact.html" class="nav-link" data-translate="nav.contact"></a></li>
             </ul>
             <div class="lang-switcher">
                 <button id="lang-ar-btn" class="lang-btn">AR</button>
                 <button id="lang-en-btn" class="lang-btn">EN</button>
             </div>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="nav-toggle">☰</div>
         </nav>
     </header>
 
-    <!-- صفحة المشاريع -->
-    <section class="page-hero">
+    <!-- عنوان الصفحة -->
+    <section class="page-hero" style="background: linear-gradient(rgba(4, 28, 67, 0.8), rgba(4, 28, 67, 0.8)), url('../images/hero-background.jpeg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 120px 0 60px;">
         <div class="container">
-            <div class="page-hero-content">
-                <h1 data-translate="projects_page.title">مشاريعنا</h1>
-                <p data-translate="projects_page.subtitle">إنجازاتنا تتحدث عن جودة عملنا وتميز خدماتنا</p>
-            </div>
+            <h1 data-translate="projects_page.title"></h1>
         </div>
     </section>
 
-    <!-- معرض المشاريع الديناميكي -->
-    <section class="projects-gallery">
+    <!-- معرض المشاريع -->
+    <main style="padding: 4rem 0;">
         <div class="container">
-            <div class="section-header">
-                <h2 data-translate="projects_page.title">معرض المشاريع</h2>
-            </div>
             <!-- سيتم ملء هذه الحاوية ديناميكيًا بواسطة JavaScript -->
-            <div class="projects-grid" id="projects-grid">
+            <div id="projects-grid" class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <!-- بطاقات المشاريع ستظهر هنا -->
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- الفوتر -->
-    <footer class="footer">
+    <footer class="footer" style="background-color: var(--primary); color: var(--white); margin-top: 4rem;">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 3rem 0;">
                 <div class="footer-section">
                     <div class="logo">
-                        <img src="../images/logo.png" alt="شعار بيدراكس" class="logo-img">
+                        <img src="../images/logo.png" alt="شعار بيدراكس" class="logo-img" style="width: 60px; height: 60px;">
                         <div class="logo-text">
-                            <span class="logo-main">بيدراكس</span>
-                            <span class="logo-sub">BUILDRAX</span>
+                            <span class="logo-main" style="color: var(--white);">بيدراكس</span>
+                            <span class="logo-sub" style="color: var(--accent);">BUILDRAX</span>
                         </div>
                     </div>
-                    <p class="footer-description" data-translate="footer.company_description">شركة بيدراكس ذات مسؤولية محدودة - البناء برؤية مستقبلية</p>
+                    <p class="footer-description" style="margin-top: 1rem;" data-translate="footer.description"></p>
                 </div>
                 <div class="footer-section">
-                    <h4 data-translate="footer.quick_links">روابط سريعة</h4>
-                    <ul class="footer-links">
-                        <li><a href="../index.html" data-translate="nav.home">الرئيسية</a></li>
-                        <li><a href="about.html" data-translate="nav.about">عن الشركة</a></li>
-                        <li><a href="services.html" data-translate="nav.services">الخدمات</a></li>
-                        <li><a href="projects.html" data-translate="nav.projects">المشاريع</a></li>
-                        <li><a href="contact.html" data-translate="nav.contact">تواصل معنا</a></li>
+                    <h4 style="color: var(--accent);" data-translate="footer.quick_links"></h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="../index.html" style="color: var(--white); text-decoration: none;" data-translate="nav.home"></a></li>
+                        <li><a href="about.html" style="color: var(--white); text-decoration: none;" data-translate="nav.about"></a></li>
+                        <li><a href="services-overview.html" style="color: var(--white); text-decoration: none;" data-translate="nav.services"></a></li>
+                        <li><a href="projects.html" style="color: var(--white); text-decoration: none;" data-translate="nav.projects"></a></li>
+                        <li><a href="contact.html" style="color: var(--white); text-decoration: none;" data-translate="nav.contact"></a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4 data-translate="footer.contact_us">تواصل معنا</h4>
-                    <div class="contact-info-footer">
-                        <div class="contact-item-footer">
-                            <i class="fas fa-phone"></i>
-                            <span>+966 50 556 4578</span>
-                        </div>
-                        <div class="contact-item-footer">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@buildrax-sa.com</span>
-                        </div>
-                        <div class="contact-item-footer">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-translate="contact_page.address">الرياض، السعودية</span>
-                        </div>
-                    </div>
+                    <h4 style="color: var(--accent);" data-translate="footer.contact_us"></h4>
+                    <p><i class="fas fa-phone" style="color: var(--accent);"></i> +966 50 556 4578</p>
+                    <p><i class="fas fa-envelope" style="color: var(--accent);"></i> info@buildrax-sa.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> <span data-translate="footer.address"></span></p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 شركة بيدراكس. جميع الحقوق محفوظة.</p>
+            <div class="footer-bottom" style="text-align: center; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                <p data-translate="footer.copyright"></p>
             </div>
         </div>
     </footer>
-
     <script src="../js/main.js"></script>
 </body>
 </html>

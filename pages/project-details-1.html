@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فريق الإدارة - بيدراكس</title>
+    <title>تفاصيل المشروع - بيدراكس</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/components.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body style="background-color: var(--light);">
+<body style="background-color: #f4f7f6;">
 
     <!-- الهيدر -->
     <header class="header">
@@ -27,7 +27,7 @@
                 <li><a href="../index.html" class="nav-link" data-translate="nav.home"></a></li>
                 <li><a href="about.html" class="nav-link" data-translate="nav.about"></a></li>
                 <li><a href="services-overview.html" class="nav-link" data-translate="nav.services"></a></li>
-                <li><a href="projects.html" class="nav-link" data-translate="nav.projects"></a></li>
+                <li><a href="projects.html" class="nav-link active" data-translate="nav.projects"></a></li>
                 <li><a href="contact.html" class="nav-link" data-translate="nav.contact"></a></li>
             </ul>
             <div class="lang-switcher">
@@ -38,39 +38,19 @@
         </nav>
     </header>
 
-    <!-- عنوان الصفحة -->
-    <section class="page-hero" style="background: linear-gradient(rgba(4, 28, 67, 0.8), rgba(4, 28, 67, 0.8)), url('../images/hero-background.jpeg'); background-size: cover; background-position: center; color: white; text-align: center; padding: 120px 0 60px;">
+    <!-- عنوان الصفحة الديناميكي -->
+    <section class="page-hero" style="background-size: cover; background-position: center; color: white; text-align: center; padding: 120px 0 60px;">
         <div class="container">
-            <h1 data-translate="management_page.title"></h1>
-            <p data-translate="management_page.subtitle"></p>
+            <h1></h1>
         </div>
     </section>
 
-    <!-- قسم فريق الإدارة -->
+    <!-- محتوى صفحة المشروع الديناميكي -->
     <main style="padding: 4rem 0;">
-        <div class="container">
-            <!-- كلمة رئيس مجلس الإدارة -->
-            <div class="management-card" style="display: flex; gap: 2rem; align-items: center; background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow); margin-bottom: 3rem;">
-                <div class="management-image" style="flex-shrink: 0;">
-                    <img src="../images/projects/project2.jpeg" alt="م. وائل الأخضر" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--accent);">
-                </div>
-                <div class="management-text">
-                    <h2 style="color: var(--primary);" data-translate="management_page.chairman_name"></h2>
-                    <h4 style="color: var(--secondary); margin-bottom: 1rem;" data-translate="management_page.chairman_title"></h4>
-                    <p style="line-height: 1.8;" data-translate="management_page.chairman_word"></p>
-                </div>
-            </div>
-
-            <!-- كلمة المدير التنفيذي -->
-            <div class="management-card" style="display: flex; flex-direction: row-reverse; gap: 2rem; align-items: center; background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
-                <div class="management-image" style="flex-shrink: 0;">
-                    <img src="../images/projects/project1.jpeg" alt="م. وجدي الفل" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--accent);">
-                </div>
-                <div class="management-text" style="text-align: right;">
-                    <h2 style="color: var(--primary);" data-translate="management_page.ceo_name"></h2>
-                    <h4 style="color: var(--secondary); margin-bottom: 1rem;" data-translate="management_page.ceo_title"></h4>
-                    <p style="line-height: 1.8;" data-translate="management_page.ceo_word"></p>
-                </div>
+        <div class="container" style="max-width: 900px;">
+             <!-- سيتم ملء هذه الحاوية ديناميكيًا بواسطة JavaScript -->
+            <div id="project-details-container" data-project-id="1" style="background: var(--white); padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                <!-- تفاصيل المشروع ستظهر هنا -->
             </div>
         </div>
     </main>

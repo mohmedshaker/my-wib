@@ -1,8 +1,8 @@
 /* الأساسيات */
 :root {
-    --primary: #1a365d;
-    --secondary: #2d5016;
-    --accent: #4a7c3a;
+    --primary: #041c43; /* New Dark Blue */
+    --secondary: #2d5016; /* Original Dark Green - for text or secondary elements */
+    --accent: #5cab5c; /* New Green */
     --light: #f8f9fa;
     --dark: #2d3748;
     --white: #ffffff;
@@ -395,28 +395,4 @@ body {
     margin-top: 1rem;
     font-size: 0.9rem;
     line-height: 1.5;
-}
-
-/* Language Switcher */
-.lang-switcher {
-    display: flex;
-    gap: 0.5rem;
-    margin-left: 1rem; /* Adjust margin as needed */
-}
-
-.lang-btn {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 0.3rem 0.6rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.lang-btn.active,
-.lang-btn:hover {
-    background: var(--primary);
-    color: var(--white);
 }
