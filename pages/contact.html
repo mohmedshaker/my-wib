@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - بيدراكس</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- الهيدر -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="شعار بيدراكس" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-main">بيدراكس</span>
+                    <span class="logo-sub">BUILDRAX</span>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link">الرئيسية</a></li>
+                <li><a href="about.html" class="nav-link">عن الشركة</a></li>
+                <li><a href="services.html" class="nav-link">الخدمات</a></li>
+                <li><a href="projects.html" class="nav-link">المشاريع</a></li>
+                <li><a href="contact.html" class="nav-link active">تواصل معنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:+966505564578" class="btn btn-outline">
+                    <i class="fas fa-phone"></i>
+                    اتصل بنا
+                </a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- صفحة التواصل -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>تواصل معنا</h1>
+                <p>نحن هنا للإجابة على استفساراتك وتقديم أفضل الحلول</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- معلومات التواصل -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>اتصل بنا</h3>
+                            <p>+966 50 556 4578</p>
+                            <a href="tel:+966505564578" class="method-link">اتصال فوري</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>البريد الإلكتروني</h3>
+                            <p>info@buildingax-sa.com</p>
+                            <a href="mailto:info@buildingax-sa.com" class="method-link">إرسال بريد</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>العنوان</h3>
+                            <p>الأمير سلطان بن عبدالعزيز، حي السليمانية الرياض، المملكة العربية السعودية</p>
+                            <a href="#map" class="method-link">عرض الخريطة</a>
+                        </div>
+                    </div>
+
+                    <!-- قسم الخريطة الجديد -->
+                    <section id="map" class="map-section">
+                        <div class="container">
+                            <h2>موقعنا على الخريطة</h2>
+                            <div class="map-container">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.234567890123!2d46.675295!3d24.713552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzQ4LjgiTiA0NsKwNDAnMzEuMCJF!5e0!3m2!1sen!2ssa!4v1234567890" 
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0; border-radius: 10px;" 
+                                    allowfullscreen="" 
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="method-content">
+                            <h3>ساعات العمل</h3>
+                            <p>الأحد - الخميس: 8:00 ص - 5:00 م</p>
+                            <p>الجمعة - السبت: إجازة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>أرسل رسالة</h2>
+                    <p>سنكون سعداء بالرد على استفساراتك في أقرب وقت</p>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="الاسم الكامل" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="البريد الإلكتروني" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="رقم الهاتف">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">نوع الخدمة المطلوبة</option>
+                                <option value="construction">أعمال الإنشاءات</option>
+                                <option value="electrical">التركيبات الكهربائية</option>
+                                <option value="maintenance">أعمال الصيانة</option>
+                                <option value="other">خدمات أخرى</option>
+                                <option value="consultation">استشارة</option>
+                            </select>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="رسالتك..." rows="5" required></textarea>
+                            <i class="fas fa-comment"></i>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- وسائل التواصل -->
+    <section class="social-contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>تواصل معنا على وسائل التواصل</h2>
+                <p>تابعنا على منصات التواصل الاجتماعي</p>
+            </div>
+            <div class="social-grid">
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>واتساب</h3>
+                    <p>راسلنا مباشرة على واتساب</p>
+                    <span class="social-link">ارسال رسالة</span>
+                </a>
+
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3>تويتر</h3>
+                    <p>تابع آخر أخبارنا ومشاريعنا</p>
+                    <span class="social-link">متابعة</span>
+                </a>
+
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>لينكد إن</h3>
+                    <p>تواصل معنا بشكل احترافي</p>
+                    <span class="social-link">الاتصال</span>
+                </a>
+
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3>إنستغرام</h3>
+                    <p>شاهد معرض مشاريعنا</p>
+                    <span class="social-link">متابعة</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="../images/logo.png" alt="شعار بيدراكس" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-main">بيدراكس</span>
+                            <span class="logo-sub">BUILDRAX</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">شركة بيدراكس ذات مسؤولية محدودة - البناء برؤية مستقبلية</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">الرئيسية</a></li>
+                        <li><a href="about.html">عن الشركة</a></li>
+                        <li><a href="services.html">الخدمات</a></li>
+                        <li><a href="projects.html">المشاريع</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <div class="contact-info-footer">
+                        <div class="contact-item-footer">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 50 556 4578</span>
+                        </div>
+                        <div class="contact-item-footer">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@buildingax-sa.com</span>
+                        </div>
+                        <div class="contact-item-footer">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>الرياض، السعودية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 شركة بيدراكس. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

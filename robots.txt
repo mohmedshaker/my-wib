@@ -1,0 +1,48 @@
+# ملف robots.txt لشركة بيدراكس
+# تم الإنشاء في: 2024
+
+User-agent: *
+Allow: /
+
+# المجلدات المحظورة
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /backup/
+Disallow: /tmp/
+
+# ملفات محظورة
+Disallow: /README.md
+Disallow: /composer.json
+Disallow: /package.json
+Disallow: /.env
+Disallow: /.htaccess
+Disallow: /web.config
+
+# مسارات محظورة
+Disallow: /search/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# السماح بفهرسة الصور
+Allow: /images/
+Allow: /styles/
+Allow: /js/
+
+# خريطة الموقع
+Sitemap: https://www.buildtax-sa.com/sitemap.xml
+
+# محركات البحث المفضلة
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
