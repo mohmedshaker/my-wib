@@ -1,70 +1,49 @@
 {
-  "lang_code": "en",
-  "direction": "ltr",
   "nav": {
     "home": "Home",
     "about": "About Us",
     "services": "Services",
     "projects": "Projects",
-    "contact": "Contact Us",
-    "management_team": "Management Team",
-    "core_values": "Our Core Values"
+    "contact": "Contact Us"
   },
   "hero": {
-    "title": "Building with a Future Vision",
-    "description": "We contribute to achieving Vision 2030 through innovative construction projects and integrated services that meet the highest standards of quality and safety.",
-    "btn_projects": "Our Projects",
-    "btn_contact": "Contact Us"
+    "title": "At Buildrax, we believe that excellence in contracting and construction goes beyond mere project completion",
+    "subtitle": "It's about leaving a legacy of quality and innovation.",
+    "button_about": "Discover More About Us",
+    "button_projects": "View Our Projects"
+  },
+  "vision_mission": {
+    "vision_title": "Our Vision",
+    "vision_text": "To be regional leaders in the contracting and construction field, achieving the highest standards of safety and sustainability in every project. We aspire to be seen as a preferred partner who contributes to shaping the urban future.",
+    "mission_title": "Our Mission",
+    "mission_text": "To provide high-quality services that meet and exceed our clients' needs and expectations, through a qualified team and the application of the latest engineering technologies. We are also committed to effectively contributing to the development of national infrastructure, with full adherence to social and environmental responsibility."
+  },
+  "services_section": {
+    "title": "Activities and Services",
+    "construction_title": "Construction",
+    "construction_text": "Includes building construction, public utility projects, and other civil engineering works.",
+    "electrical_title": "Electrical",
+    "electrical_text": "Includes manufacturing of lighting equipment, electrical installations, and repair of electrical equipment.",
+    "maintenance_title": "Maintenance",
+    "maintenance_text": "Includes repair of various machinery and equipment, in addition to maintenance and repair of vehicles.",
+    "other_title": "Other Services",
+    "other_text": "Includes demolition, site preparation, plumbing, HVAC, and building completion and finishing."
   },
   "footer": {
+    "description": "A leading company in the contracting and construction field, committed to quality and innovation to achieve Vision 2030.",
     "quick_links": "Quick Links",
     "contact_us": "Contact Us",
-    "copyright": "© 2024 Buildrax Company. All rights reserved.",
-    "company_description": "Buildrax Co. Ltd. - Building with a Future Vision"
-  },
-  "contact_page": {
-    "title": "Contact Us",
-    "subtitle": "We are here to answer all your inquiries.",
-    "form_name": "Full Name",
-    "form_email": "Email Address",
-    "form_subject": "Subject",
-    "form_message": "Your Message",
-    "form_send": "Send Message",
-    "map_title": "Our Location on the Map",
-    "phone": "Phone",
-    "email": "Email",
-    "address": "Address"
-  },
-  "about_page": {
-    "title": "About Buildrax",
-    "subtitle": "Pioneers in the contracting and construction field for over 15 years.",
-    "who_we_are": "Who We Are",
-    "mission": "Our Mission",
-    "vision": "Our Vision"
+    "address": "Prince Sultan Bin Abdulaziz, As Sulimaniyah, Riyadh",
+    "copyright": "© 2024 Buildrax Company. All rights reserved."
   },
   "management_page": {
-    "title": "Management Team",
-    "subtitle": "Professional leadership guiding the company towards excellence and innovation.",
-    "chairman_name": "Eng. Wael Al-Akhdar",
-    "chairman_title": "Chairman of the Board",
-    "ceo_name": "Eng. Wajdi Al-Ful",
-    "ceo_title": "Vice Chairman - CEO"
-  },
-  "values_page": {
-    "title": "Our Core Values",
-    "subtitle": "The foundations of our success and excellence in every project.",
-    "quality": "Quality",
-    "commitment": "Commitment",
-    "safety": "Safety",
-    "innovation": "Innovation",
-    "transparency": "Transparency"
-  },
-  "services_overview_page": {
-    "title": "Services Overview",
-    "subtitle": "We offer a comprehensive package of construction and engineering services."
-  },
-  "projects_page": {
-    "title": "Projects Gallery",
-    "subtitle": "Our achievements speak to the quality of our work and the excellence of our services."
+      "title": "Management Team",
+      "subtitle": "Inspiring leadership guiding us towards a bright future",
+      "chairman_name": "Eng. Wael Al-Akhdar",
+      "chairman_title": "Chairman of the Board",
+      "chairman_word": "At Buildrax, we view your projects as an investment in a long-term partnership built on mutual trust. As Chairman, I assure you of our commitment to the highest standards of quality and transparency, relying on innovation and the latest engineering solutions. We are an active part of supporting the developmental goals of Saudi Vision 2030. Your choice in us is a vote of confidence in guaranteed achievement and a contribution to building the future. We look forward to turning your plans into a prosperous reality.",
+      "ceo_name": "Eng. Wajdi Al-Ful",
+      "ceo_title": "Vice Chairman - CEO",
+      "ceo_word": "As Vice Chairman and CEO of Buildrax, we are proud to be at the heart of the Kingdom's development journey, driven by Saudi Vision 2030. Our vision extends beyond mere contracting; it is a commitment to be pioneers who contribute to building the urban future of the Kingdom. Our mission is centered on delivering high quality that meets our clients' ambitions and supports the development of national infrastructure. We embrace innovation, sustainability, and safety as core values, ensuring that every project we complete is a true contribution to achieving the national vision's goals."
   }
 }

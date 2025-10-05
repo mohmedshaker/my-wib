@@ -5,160 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بيدراكس - شركة مقاولات وإنشاءات</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<!-- الهيدر -->
+    <!-- الهيدر -->
     <header class="header">
         <nav class="nav container">
             <div class="logo">
-                <!-- غير هذا السطر فقط -->
-                <img src="images/logo.png" alt="شعار بيدراكس" class="logo-img">
-                <div class="logo-text">
-                    <span class="logo-main">بيدراكس</span>
-                    <span class="logo-sub">BUILDRAX</span>
-                </div>
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                    <img src="images/logo.png" alt="شعار بيدراكس" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-main">بيدراكس</span>
+                        <span class="logo-sub">BUILDRAX</span>
+                    </div>
+                </a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link active" data-translate="nav.home">الرئيسية</a></li>
-                <li><a href="pages/about.html" class="nav-link" data-translate="nav.about">عن الشركة</a></li>
-                <li><a href="pages/services.html" class="nav-link" data-translate="nav.services">الخدمات</a></li>
-                <li><a href="pages/projects.html" class="nav-link" data-translate="nav.projects">المشاريع</a></li>
-                <li><a href="pages/contact.html" class="nav-link" data-translate="nav.contact">تواصل معنا</a></li>
+                <li><a href="index.html" class="nav-link active" data-translate="nav.home"></a></li>
+                <li><a href="pages/about.html" class="nav-link" data-translate="nav.about"></a></li>
+                <li><a href="pages/services-overview.html" class="nav-link" data-translate="nav.services"></a></li>
+                <li><a href="pages/projects.html" class="nav-link" data-translate="nav.projects"></a></li>
+                <li><a href="pages/contact.html" class="nav-link" data-translate="nav.contact"></a></li>
             </ul>
             <div class="lang-switcher">
-                <button id="lang-ar-btn" class="lang-btn active">AR</button>
+                <button id="lang-ar-btn" class="lang-btn">AR</button>
                 <button id="lang-en-btn" class="lang-btn">EN</button>
             </div>
             <div class="nav-toggle">☰</div>
         </nav>
     </header>
 
-    <!-- الهيرو -->
-    <section class="hero">
+    <!-- الهيرو الجديد -->
+    <section class="hero" style="background: linear-gradient(rgba(4, 28, 67, 0.8), rgba(4, 28, 67, 0.8)), url('images/hero-background.jpeg'); background-size: cover; background-position: center;">
         <div class="container">
-            <h1 class="hero-title" data-translate="hero.title">البناء برؤية مستقبلية</h1>
-            <p class="hero-description" data-translate="hero.description">
-                نساهم في تحقيق رؤية 2030 من خلال مشاريع إنشائية مبتكرة 
-                وخدمات متكاملة تلبي أعلى معايير الجودة والسلامة
-            </p>
+            <h1 class="hero-title" data-translate="hero.title"></h1>
+            <p class="hero-description" data-translate="hero.subtitle"></p>
             <div class="hero-buttons">
-                <a href="pages/projects.html" class="btn btn-primary">
-                    <i class="fas fa-building"></i>
-                    <span data-translate="hero.btn_projects">مشاريعنا</span>
+                <a href="pages/about.html" class="btn btn-primary" style="background-color: var(--accent);">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-translate="hero.button_about"></span>
                 </a>
-                <a href="pages/contact.html" class="btn btn-secondary">
-                    <i class="fas fa-envelope"></i>
-                    <span data-translate="hero.btn_contact">تواصل معنا</span>
+                <a href="pages/projects.html" class="btn btn-secondary">
+                    <i class="fas fa-building"></i>
+                    <span data-translate="hero.button_projects"></span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- الإحصائيات -->
-    <section class="quick-about">
+    <!-- قسم الرؤية والرسالة -->
+    <section class="vision-mission" style="padding: 4rem 0; background: var(--white);">
         <div class="container">
-            <div class="quick-grid">
-                <div class="quick-card">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>مشاريع مكتملة</h3>
-                    <div class="number" data-count="50">50+</div>
+            <div class="vision-mission-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div class="vision-card" style="background: #fdfdfd; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-eye" style="color: var(--accent); margin-right: 0.5rem;"></i><span data-translate="vision_mission.vision_title"></span></h2>
+                    <p data-translate="vision_mission.vision_text"></p>
                 </div>
-                <div class="quick-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>سنوات خبرة</h3>
-                    <div class="number" data-count="15">15+</div>
-                </div>
-                <div class="quick-card">
-                    <i class="fas fa-users"></i>
-                    <h3>فريق محترف</h3>
-                    <div class="number" data-count="100">100+</div>
-                </div>
-                <div class="quick-card">
-                    <i class="fas fa-award"></i>
-                    <h3>جودة متكاملة</h3>
-                    <div class="number">100%</div>
+                <div class="mission-card" style="background: #fdfdfd; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                    <h2 style="color: var(--primary); margin-bottom: 1rem;"><i class="fas fa-bullseye" style="color: var(--accent); margin-right: 0.5rem;"></i><span data-translate="vision_mission.mission_title"></span></h2>
+                    <p data-translate="vision_mission.mission_text"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- الخدمات -->
-    <section class="quick-services">
+    <!-- قسم الخدمات الجديد -->
+    <section class="services-overview" style="padding: 4rem 0; background: var(--light);">
         <div class="container">
-            <div class="section-header">
-                <h2>خدماتنا الرئيسية</h2>
-                <p>نقدم مجموعة متكاملة من خدمات المقاولات والإنشاءات</p>
+            <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="color: var(--primary); font-size: 2.2rem;" data-translate="services_section.title"></h2>
             </div>
-            <div class="services-grid">
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
                 <div class="service-card">
-                    <i class="fas fa-building"></i>
-                    <h3>أعمال الإنشاءات</h3>
-                    <p>تشييد المباني والمشاريع الإنشائية المتكاملة</p>
-                    <a href="pages/services.html" class="btn btn-primary">المزيد</a>
+                    <i class="fas fa-hard-hat" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 data-translate="services_section.construction_title"></h3>
+                    <p data-translate="services_section.construction_text"></p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>التركيبات الكهربائية</h3>
-                    <p>أنظمة كهربائية متكاملة بأعلى معايير السلامة</p>
-                    <a href="pages/services.html" class="btn btn-primary">المزيد</a>
+                    <i class="fas fa-bolt" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 data-translate="services_section.electrical_title"></h3>
+                    <p data-translate="services_section.electrical_text"></p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>أعمال الصيانة</h3>
-                    <p>صيانة شاملة للمباني والمرافق والمركبات</p>
-                    <a href="pages/services.html" class="btn btn-primary">المزيد</a>
+                    <i class="fas fa-tools" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 data-translate="services_section.maintenance_title"></h3>
+                    <p data-translate="services_section.maintenance_text"></p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-drafting-compass" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3 data-translate="services_section.other_title"></h3>
+                    <p data-translate="services_section.other_text"></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- الفوتر -->
-<!-- الفوتر -->
-    <footer class="footer">
+    <!-- الفوتر الجديد -->
+    <footer class="footer" style="background-color: var(--primary); color: var(--white);">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 3rem 0;">
                 <div class="footer-section">
                     <div class="logo">
-                        <img src="images/logo.png" alt="شعار بيدراكس" class="logo-img">
+                        <img src="images/logo.png" alt="شعار بيدراكس" class="logo-img" style="width: 60px; height: 60px;">
                         <div class="logo-text">
-                            <span class="logo-main">بيدراكس</span>
-                            <span class="logo-sub">BUILDRAX</span>
+                            <span class="logo-main" style="color: var(--white);">بيدراكس</span>
+                            <span class="logo-sub" style="color: var(--accent);">BUILDRAX</span>
                         </div>
                     </div>
-                    <p class="footer-description" data-translate="footer.company_description">شركة بيدراكس ذات مسؤولية محدودة - البناء برؤية مستقبلية</p>
+                    <p class="footer-description" style="margin-top: 1rem;" data-translate="footer.description"></p>
                 </div>
                 <div class="footer-section">
-                    <h4 data-translate="footer.quick_links">روابط سريعة</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html" data-translate="nav.home">الرئيسية</a></li>
-                        <li><a href="pages/about.html" data-translate="nav.about">عن الشركة</a></li>
-                        <li><a href="pages/services.html" data-translate="nav.services">الخدمات</a></li>
-                        <li><a href="pages/projects.html" data-translate="nav.projects">المشاريع</a></li>
-                        <li><a href="pages/contact.html" data-translate="nav.contact">تواصل معنا</a></li>
+                    <h4 style="color: var(--accent);" data-translate="footer.quick_links"></h4>
+                    <ul class="footer-links" style="list-style: none; padding: 0;">
+                        <li><a href="index.html" style="color: var(--white); text-decoration: none;" data-translate="nav.home"></a></li>
+                        <li><a href="pages/about.html" style="color: var(--white); text-decoration: none;" data-translate="nav.about"></a></li>
+                        <li><a href="pages/services-overview.html" style="color: var(--white); text-decoration: none;" data-translate="nav.services"></a></li>
+                        <li><a href="pages/projects.html" style="color: var(--white); text-decoration: none;" data-translate="nav.projects"></a></li>
+                        <li><a href="pages/contact.html" style="color: var(--white); text-decoration: none;" data-translate="nav.contact"></a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4 data-translate="footer.contact_us">تواصل معنا</h4>
-                    <div class="contact-info-footer">
-                        <div class="contact-item-footer">
-                            <i class="fas fa-phone"></i>
-                            <span>+966 50 556 4578</span>
-                        </div>
-                        <div class="contact-item-footer">
-                            <i class="fas fa-envelope"></i>
-                            <span>info@buildrax-sa.com</span>
-                        </div>
-                        <div class="contact-item-footer">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span data-translate="contact_page.address">الرياض، السعودية</span>
-                        </div>
-                    </div>
+                    <h4 style="color: var(--accent);" data-translate="footer.contact_us"></h4>
+                    <p><i class="fas fa-phone" style="color: var(--accent);"></i> +966 50 556 4578</p>
+                    <p><i class="fas fa-envelope" style="color: var(--accent);"></i> info@buildrax-sa.com</p>
+                    <p><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> <span data-translate="footer.address"></span></p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p data-translate="footer.copyright">&copy; 2024 شركة بيدراكس. جميع الحقوق محفوظة.</p>
+            <div class="footer-bottom" style="text-align: center; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                <p data-translate="footer.copyright"></p>
             </div>
         </div>
     </footer>

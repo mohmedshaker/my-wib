@@ -1,217 +1,147 @@
-// =================================================================================
-// التطبيق الرئيسي للموقع
-// =================================================================================
-const App = {
-    // -----------------------------------------------------------------------------
-    // الخصائص الرئيسية
-    // -----------------------------------------------------------------------------
-    lang: 'ar', // اللغة الافتراضية
-    translations: {}, // لتخزين نصوص الترجمة
-    projects: [], // لتخزين بيانات المشاريع
+document.addEventListener('DOMContentLoaded', () => {
+    const App = {
+        lang: 'ar',
+        translations: {},
+        projects: [],
 
-    // -----------------------------------------------------------------------------
-    // دالة التهيئة الرئيسية (Init)
-    // -----------------------------------------------------------------------------
-    async init() {
-        console.log('تطبيق بيدراكس يبدأ العمل...');
-        this.detectLanguage(); // تحديد اللغة
-        await this.loadTranslations(); // تحميل ملفات الترجمة
-        await this.loadProjects(); // تحميل بيانات المشاريع
-        this.updateUI(); // تحديث واجهة المستخدم بالنصوص
-        this.initEventListeners(); // تهيئة مستمعي الأحداث
-        this.initCounters(); // تهيئة عدادات الأرقام
-        this.initMobileMenu(); // تهيئة قائمة الموبايل
-        this.initBackToTopButton(); // تهيئة زر العودة للأعلى
-        this.renderProjectDetails(); // عرض تفاصيل المشروع إذا كانت الصفحة هي صفحة التفاصيل
-    },
+        async init() {
+            this.detectLanguage();
+            await this.loadAssets();
+            this.updateUI();
+            this.attachEventListeners();
+            this.initAnimations();
+        },
 
-    // -----------------------------------------------------------------------------
-    // الوظائف المتعلقة باللغة والترجمة
-    // -----------------------------------------------------------------------------
-    detectLanguage() {
-        // الأولوية لـ URL param، ثم LocalStorage، ثم اللغة الافتراضية
-        const urlParams = new URLSearchParams(window.location.search);
-        this.lang = urlParams.get('lang') || localStorage.getItem('lang') || 'ar';
-        localStorage.setItem('lang', this.lang); // مزامنة LocalStorage
-    },
+        detectLanguage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            this.lang = urlParams.get('lang') || localStorage.getItem('lang') || 'ar';
+            localStorage.setItem('lang', this.lang);
+        },
 
-    async loadTranslations() {
-        try {
-            // تحديد المسار الصحيح بناءً على مكان الملف الحالي
-            const path = window.location.pathname.includes('/pages/') ? '../lang/' : './lang/';
-            const response = await fetch(`${path}${this.lang}.json`);
-            if (!response.ok) throw new Error('فشل تحميل ملف الترجمة');
-            this.translations = await response.json();
-        } catch (error) {
-            console.error(error);
-            // في حالة الفشل، يتم تحميل اللغة العربية كخيار احتياطي
-            const path = window.location.pathname.includes('/pages/') ? '../lang/' : './lang/';
-            const response = await fetch(`${path}ar.json`);
-            this.translations = await response.json();
-        }
-    },
-
-    updateUI() {
-        // تحديث اتجاه الصفحة
-        document.documentElement.lang = this.translations.lang_code;
-        document.documentElement.dir = this.translations.direction;
-
-        // تحديث جميع العناصر التي تحتوي على `data-translate`
-        document.querySelectorAll('[data-translate]').forEach(el => {
-            const key = el.getAttribute('data-translate');
-            // استخدم reduce للوصول إلى القيمة المتداخلة
-            const value = key.split('.').reduce((obj, k) => (obj || {})[k], this.translations);
-            if (value) {
-                el.textContent = value;
+        async loadAssets() {
+            const base = window.location.pathname.includes('/pages/') ? '..' : '.';
+            try {
+                const [translationsRes, projectsRes] = await Promise.all([
+                    fetch(`${base}/lang/${this.lang}.json`),
+                    fetch(`${base}/data/projects.json`)
+                ]);
+                this.translations = await translationsRes.json();
+                this.projects = await projectsRes.json();
+            } catch (error) {
+                console.error("Failed to load initial assets:", error);
             }
-        });
-    },
+        },
 
-    changeLanguage(newLang) {
-        if (this.lang === newLang) return;
+        updateUI() {
+            document.documentElement.lang = this.lang;
+            document.documentElement.dir = this.lang === 'ar' ? 'rtl' : 'ltr';
 
-        // تحديث الرابط لإضافة بارامتر اللغة
-        const url = new URL(window.location);
-        url.searchParams.set('lang', newLang);
-
-        // إعادة تحميل الصفحة بالرابط الجديد
-        window.location.href = url.toString();
-    },
-
-    // -----------------------------------------------------------------------------
-    // الوظائف المتعلقة بالمشاريع
-    // -----------------------------------------------------------------------------
-    async loadProjects() {
-        try {
-            const path = window.location.pathname.includes('/pages/') ? '../data/' : './data/';
-            const response = await fetch(`${path}projects.json`);
-            if (!response.ok) throw new Error('فشل تحميل ملف المشاريع');
-            this.projects = await response.json();
+            this.updateTextContent();
+            this.updateButtons();
             this.renderProjects();
-        } catch (error) {
-            console.error(error);
-        }
-    },
+            this.renderProjectDetails();
+        },
 
-    renderProjects() {
-        const container = document.getElementById('projects-grid');
-        if (!container) return; // الخروج إذا لم تكن في صفحة المشاريع
+        updateTextContent() {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                const value = key.split('.').reduce((obj, k) => obj?.[k], this.translations);
+                if (value) el.innerHTML = value;
+            });
+        },
 
-        container.innerHTML = ''; // إفراغ الحاوية
-        this.projects.forEach(project => {
-            const imagePath = window.location.pathname.includes('/pages/') ? `../${project.image}` : `./${project.image}`;
-            const projectCard = `
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="${imagePath}" alt="${project['title_' + this.lang]}">
-                    </div>
-                    <div class="project-info">
-                        <h3>${project['title_' + this.lang]}</h3>
-                        <p>${project['description_' + this.lang].substring(0, 100)}...</p>
-                        <div class="project-features">
-                            ${project['features_' + this.lang].map(f => `<span class="feature">${f}</span>`).join('')}
+        updateButtons() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.id === `lang-${this.lang}-btn`) {
+                    btn.classList.add('active');
+                }
+            });
+        },
+
+        renderProjects() {
+            const container = document.querySelector('#projects-grid');
+            if (!container) return;
+            container.innerHTML = '';
+            this.projects.forEach(p => {
+                const projectCard = `
+                    <a href="project-details-${p.id}.html" class="project-card-link" style="text-decoration: none; color: inherit;">
+                        <div class="project-card" style="background: var(--white); border-radius: 10px; box-shadow: var(--shadow); overflow: hidden; transition: transform 0.3s;">
+                            <img src="../${p.image}" alt="${p[`title_${this.lang}`]}" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div class="project-info" style="padding: 1.5rem;">
+                                <h3 style="color: var(--primary); margin-bottom: 0.5rem;">${p[`title_${this.lang}`]}</h3>
+                                <p>${p[`description_${this.lang}`]}</p>
+                            </div>
                         </div>
-                        <div class="project-meta">
-                            <span><i class="fas fa-calendar"></i> ${project.year}</span>
-                            <span><i class="fas fa-map-marker-alt"></i> ${project['location_' + this.lang]}</span>
-                        </div>
-                         <a href="project-details.html?id=${project.id}" class="btn btn-primary" data-translate="projects_page.details_btn">تفاصيل المشروع</a>
-                    </div>
+                    </a>
+                `;
+                container.innerHTML += projectCard;
+            });
+        },
+
+        renderProjectDetails() {
+            const container = document.querySelector('#project-details-container');
+            if (!container) return;
+            const projectId = parseInt(container.getAttribute('data-project-id'));
+            const project = this.projects.find(p => p.id === projectId);
+            if (!project) return;
+
+            const detailsHTML = `
+                <h2 style="color: var(--primary); margin-bottom: 1.5rem;">${this.translations.project_details?.description_title || 'وصف المشروع'}</h2>
+                <p style="line-height: 1.8; margin-bottom: 2rem;">${project[`full_description_${this.lang}`]}</p>
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem;">${this.translations.project_details?.gallery_title || 'معرض الصور'}</h3>
+                <div class="project-gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    ${project.gallery.map(img => `<img src="../${img}" alt="${project[`title_${this.lang}`]}" style="width: 100%; border-radius: 5px;">`).join('')}
                 </div>
             `;
-            container.innerHTML += projectCard;
-        });
-    },
+            container.innerHTML = detailsHTML;
 
-    renderProjectDetails() {
-        const container = document.getElementById('project-details-container');
-        if (!container) return;
+            const hero = document.querySelector('.page-hero');
+            const title = hero.querySelector('h1');
+            hero.style.backgroundImage = `linear-gradient(rgba(4, 28, 67, 0.8), rgba(4, 28, 67, 0.8)), url('../${project.image}')`;
+            title.textContent = project[`title_${this.lang}`];
+        },
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = parseInt(urlParams.get('id'));
-        const project = this.projects.find(p => p.id === projectId);
+        attachEventListeners() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const newLang = e.target.id.split('-')[1];
+                    if (this.lang === newLang) return;
+                    const url = new URL(window.location);
+                    url.searchParams.set('lang', newLang);
+                    window.location.href = url.toString();
+                });
+            });
 
-        if (project) {
-             const imagePath = `../${project.image}`;
-             container.innerHTML = `
-                <h1 class="project-title">${project['title_' + this.lang]}</h1>
-                <img src="${imagePath}" alt="${project['title_' + this.lang]}" class="project-main-image">
-                <div class="project-content">
-                    <p>${project['description_' + this.lang]}</p>
-                    <h3>المميزات</h3>
-                    <ul>
-                        ${project['features_' + this.lang].map(f => `<li>${f}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-        } else {
-            container.innerHTML = `<p>المشروع غير موجود أو يجري تحميله...</p>`;
-        }
-    },
+            const navToggle = document.querySelector('.nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            }
+        },
 
-    // -----------------------------------------------------------------------------
-    // تهيئة مستمعي الأحداث
-    // -----------------------------------------------------------------------------
-    initEventListeners() {
-        // أزرار تغيير اللغة
-        document.getElementById('lang-ar-btn')?.addEventListener('click', () => this.changeLanguage('ar'));
-        document.getElementById('lang-en-btn')?.addEventListener('click', () => this.changeLanguage('en'));
-    },
+        initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
 
-    // -----------------------------------------------------------------------------
-    // الوظائف المساعدة والتفاعلية
-    // -----------------------------------------------------------------------------
-    initMobileMenu() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+            document.querySelectorAll('.service-card, .value-card, .project-card, .management-card').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
             });
         }
-    },
+    };
 
-    initCounters() {
-        const counters = document.querySelectorAll('.number[data-count]');
-        counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-count'));
-            if (isNaN(target)) return;
-            let current = 0;
-            const increment = target / 100;
-
-            const updateCounter = () => {
-                if (current < target) {
-                    current += increment;
-                    counter.textContent = Math.ceil(current);
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target + (counter.getAttribute('data-count').includes('+') ? '+' : '');
-                }
-            };
-            setTimeout(updateCounter, 1000); // تأخير بسيط لبدء العداد
-        });
-    },
-
-    initBackToTopButton() {
-        const backToTop = document.createElement('button');
-        backToTop.innerHTML = '↑';
-        backToTop.className = 'back-to-top';
-        document.body.appendChild(backToTop);
-
-        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
-        });
-    }
-};
-
-// =================================================================================
-// تشغيل التطبيق عند تحميل الصفحة
-// =================================================================================
-document.addEventListener('DOMContentLoaded', () => {
     App.init();
 });
