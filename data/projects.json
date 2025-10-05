@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "title_ar": "المبنى الإداري الحديث",
+    "title_en": "Modern Administrative Building",
+    "description_ar": "بناء مبنى إداري حديث مع التركيز على التشطيبات الداخلية ذات الجودة العالية. تم تنفيذ المشروع بأحدث التقنيات وبتصميم عصري يلبي احتياجات العملاء.",
+    "description_en": "Construction of a modern administrative building with a focus on high-quality interior finishes. The project was implemented with the latest technologies and a modern design that meets client needs.",
+    "image": "images/projects/project1.jpeg",
+    "features_ar": ["إنشاءات", "تشطيبات", "تصميم داخلي"],
+    "features_en": ["Construction", "Finishing", "Interior Design"],
+    "year": 2023,
+    "location_ar": "الرياض",
+    "location_en": "Riyadh"
+  },
+  {
+    "id": 2,
+    "title_ar": "المبنى التجاري متعدد الطوابق",
+    "title_en": "Multi-Story Commercial Building",
+    "description_ar": "تنفيذ مبنى تجاري متعدد الطوابق مع مساحات مخصصة للمكاتب والمحلات. تميز المشروع بالتصميم الوظيفي والمرونة في توزيع المساحات.",
+    "description_en": "Development of a multi-story commercial building with dedicated spaces for offices and shops. The project was characterized by its functional design and flexibility in space distribution.",
+    "image": "images/projects/project2.jpeg",
+    "features_ar": ["تجاري", "متعدد الطوابق", "مكاتب"],
+    "features_en": ["Commercial", "Multi-Story", "Offices"],
+    "year": 2023,
+    "location_ar": "جدة",
+    "location_en": "Jeddah"
+  },
+  {
+    "id": 3,
+    "title_ar": "الموقع الصناعي والورش",
+    "title_en": "Industrial Site and Workshops",
+    "description_ar": "تطوير موقع صناعي يضم ورش عمل ومخازن مجهزة بأحدث الأنظمة. تم تزويد الموقع بجميع المرافق والخدمات اللازمة للتشغيل.",
+    "description_en": "Development of an industrial site that includes workshops and warehouses equipped with the latest systems. The site was provided with all necessary facilities and services for operation.",
+    "image": "images/projects/project3.jpeg",
+    "features_ar": ["صناعي", "مخازن", "ورش عمل"],
+    "features_en": ["Industrial", "Warehouses", "Workshops"],
+    "year": 2022,
+    "location_ar": "الدمام",
+    "location_en": "Dammam"
+  },
+  {
+    "id": 4,
+    "title_ar": "القبة الإنشائية",
+    "title_en": "Structural Dome",
+    "description_ar": "تنفيذ قبة إنشائية بتصميم معماري مميز يبرز الجانب الجمالي والوظيفي. تم استخدام تقنيات متقدمة في الإنشاء لضمان المتانة والجمال.",
+    "description_en": "Implementation of a structural dome with a distinctive architectural design that highlights both aesthetic and functional aspects. Advanced construction techniques were used to ensure durability and beauty.",
+    "image": "images/projects/project4.jpeg",
+    "features_ar": ["قبة", "تصميم معماري", "إنشاءات خاصة"],
+    "features_en": ["Dome", "Architectural Design", "Special Constructions"],
+    "year": 2022,
+    "location_ar": "الرياض",
+    "location_en": "Riyadh"
+  }
+]
